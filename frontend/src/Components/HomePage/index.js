@@ -1,7 +1,7 @@
 import './style.css';
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import ActionButton from '../../Atoms/ActionButton';
+import ActionButton from '../../SubComponents/ActionButton';
 
 export default function HomePage() {
 
@@ -12,9 +12,8 @@ export default function HomePage() {
     return (
         <div className="hp-main">
             <div className="loginPage_bg">
-                <ActionButton onButtonClick={handleClick} >Sardar</ActionButton>
                 <Link to='/'>
-                    <img id="logo" src="/Images/logo.svg" alt="logo" />
+                    <img height={'40px'} width='auto' id="logo" src="/Images/logo.svg" alt="logo" />
                 </Link>
                 <Link to="/login">
                     <button className="login-sigin-btn">Sign In</button>

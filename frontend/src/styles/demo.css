@@ -1,0 +1,41 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  display: flex;
+  height: 100vh;
+  background: #e5e5e5;
+}
+
+  #scroller{
+    display: flex;
+    width: 360px;
+    height: 500px;
+    margin: auto;
+    background: black;
+    overflow: scroll;
+  }
+
+    .spacer{
+      min-width: 5.5%;
+      height: 80%;
+      margin: auto;
+    }
+
+    .card{
+      min-width: 75%;
+      height: 80%;
+      margin: auto;
+      margin-right: 20px;
+      background: white;
+    }
+
+    .card .one{
+        margin-left: 20px
+      }
+
+      .card .six{
+        margin-right: 20px
+      }

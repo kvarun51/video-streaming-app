@@ -1,0 +1,8 @@
+Sign Up:
+/user/create
+
+Login:
+/user/login
+
+Get User Data:
+/user/get/<userId>
