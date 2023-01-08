@@ -19,6 +19,7 @@ db = firebase.database()
 
 def newUserSignUp(email, password):
     user = auth.create_user_with_email_and_password(email, password)
+    print(user)
     return user
 
 def userLogin(email, password):

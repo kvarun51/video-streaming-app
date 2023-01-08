@@ -2,14 +2,18 @@ import logo from "./logo.svg";
 import "./styles/globals.css";
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./Components/HomePage";
-import Onboarding from "./Components/Onboarding";
+import SignIn from "./Components/SignIn";
+import SignUp from "./Components/SignUp";
+import MainFeed from "./Components/MainFeed";
 
 function App() {
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route exact path="/login" element={<Onboarding />} />
+        <Route exact path="/sign-up" element={<SignUp />} />
+        <Route exact path="/login" element={<SignIn />} />
+        <Route exact path="/browse" element={<MainFeed />} />
       </Routes>
     </div>
   );
