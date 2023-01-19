@@ -7,30 +7,32 @@ function ContentCarousel({ contentList }) {
 
   return (
     <div className={carouselContainer}>
-      {contentList.map((content) => (
-        <div
-          className={css(contentCard)}
-          onClick={() => {
-            if (content.backdrop_path)
-              navigate(
-                `/browse/${content.id}/${Boolean(content["release_date"])}`
-              );
-          }}
-        >
-          <div className={contentImage}>
-            <img
-              src={`https://image.tmdb.org/t/p/w500${
-                content.backdrop_path
-                  ? content.backdrop_path
-                  : content.poster_path
-              }`}
-            />
+      {contentList.map((content) => {
+        return content ? (
+          <div
+            className={css(contentCard)}
+            onClick={() => {
+              if (content.backdrop_path)
+                navigate(
+                  `/browse/${content.id}/${Boolean(content["release_date"])}`
+                );
+            }}
+          >
+            <div className={contentImage}>
+              <img
+                src={`https://image.tmdb.org/t/p/w500${
+                  content.backdrop_path
+                    ? content.backdrop_path
+                    : content.poster_path
+                }`}
+              />
+            </div>
+            <p className={contentTitle}>
+              {content.title ? content.title : content.name}
+            </p>
           </div>
-          <p className={contentTitle}>
-            {content.title ? content.title : content.name}
-          </p>
-        </div>
-      ))}
+        ) : null;
+      })}
     </div>
   );
 }
@@ -53,6 +55,11 @@ const contentCard = css`
   margin-bottom: 20px;
   p {
     color: white;
+  }
+  transition: all 0.5s;
+  :hover {
+    transform: scale(1.1);
+    cursor: pointer;
   }
 `;
 const contentImage = css`
